@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif ;
+    font-size: 20px ;
+    background: aliceblue ;
+    margin: 0px ;
+}
+
+
+
+.holder {
+    display: grid ;}
+
+main {
+    grid-column: 2 / 6 ;
+}
+
+header {
+    grid-column: 2 / 6 ;
+    grid-row: 1 ;
+    background-color: rebeccapurple ;
+}
+
+.laside {
+    grid-row: 1 / 10 ;
+    height: calc(100vh - 10px) ;
+    background-color: #996210 ;
+    border: 5px #6e4105 solid ;
+    overflow: auto ;    
+}
+
+.raside {
+    grid-column: 6 / 8 ;
+    grid-row: 1 / 10 ;
+    height: calc(100vh - 10px) ;
+    background-color: #996210 ;
+    border: 5px #6e4105 solid ;
+}
+
+
+
+button {
+    background-color: aliceblue ;
+    border: None ;
+    outline: none ;
+}
+
+.button_holder {
+    display: flex ;
+    flex-flow:column ;
+}
+
+.raside .button_holder button {
+    background-color: #804c07 ; 
+    border: #5a3707 solid 2px ;
+}
+
+
+
+.acheivements {
+    display: flex ;
+    flex-flow: row wrap ;
+    padding: 0 ;
+}
+
+.acheivements li {
+    list-style-type: none ;
+    border: #7b4c0b solid 2px ;
+    background-color: #af7425 ;
+}
+
+a, a:hover, a:focus {
+    color:#bd0f0f
+}
