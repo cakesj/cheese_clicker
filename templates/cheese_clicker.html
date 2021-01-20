@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Cheese Clicker</title>
+
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+      <link href="{{ url_for('static', filename='style.css') }}" type="text/css" rel="stylesheet">
+
+      <script>
+        var counter = 0;
+        var multip = 1;
+        var multip_cost = 2;
+        var ascentions = 0;
+
+
+
+        function clicked_cheese() {
+
+          document.getElementById("cheese_count").innerHTML = counter += Math.floor(1*multip);
+          document.getElementById("achiv1").innerHTML = '<img src="/static/acheivement_1.png"> gromit!';
+
+          if(counter > 9000){ 
+            document.getElementById("achiv9").innerHTML = '<img src="/static/acheivement_9.png"> its over 9000!'; 
+          }
+          document.getElementById("history").innerHTML = "lovely cheese!<br>" + document.getElementById("history").innerHTML;
+        }
+
+
+
+        function by1_5() {
+
+          if((counter - multip_cost) >= 0){
+            document.getElementById("cheese_count").innerHTML = counter -= multip_cost;
+            multip_cost = multip_cost*2;
+            multip *=1.5;
+            document.getElementById("doubler").innerHTML = multip_cost;
+
+            if(multip > 7){
+            document.getElementById("achiv3").innerHTML = '<img src="/static/acheivement_3.png"> POW! haha!';
+            }
+            document.getElementById("history").innerHTML = "cheese makes me strong!<br>" + document.getElementById("history").innerHTML;
+          }
+          else{
+            document.getElementById("achiv4").innerHTML = '<img src="/static/acheivement_4.png"> you MUST pay!';
+          }}
+
+
+
+          function delete_history() {
+            document.getElementById("history").innerHTML = "";
+            document.getElementById("achiv2").innerHTML = '<img src="/static/acheivement_2.png"> <i>incognito</i>';
+          }
+              
+
+
+          function ascend() {
+            if(counter != 0 || multip != 1){
+            document.getElementById("history").innerHTML = "i just reset your cheese! LOL!";
+            document.getElementById("achiv5").innerHTML = '<img src="/static/acheivement_5.png" onclick="acheive_acheivement8()"> you mad?';
+            counter = 0;
+            document.getElementById("cheese_count").innerHTML = 0;
+            multip = 1;
+            multip_cost = 2
+            document.getElementById("doubler").innerHTML = 1;
+
+            ascentions += 1
+            if(ascentions >= 3){
+              document.getElementById("achiv6").innerHTML = '<img src="/static/acheivement_6.png"> uhhhhh...';
+          }}}
+
+
+
+          function acheive_acheivement7() {
+            document.getElementById("achiv7").innerHTML = '<img src="/static/acheivement_7.png"> heandy!';}
+          function acheive_acheivement8() {
+            document.getElementById("achiv8").innerHTML = '<img src="/static/acheivement_8.png"> hihi';}
+          </script>
+    </head>
+
+    <body>
+      <div class="holder">
+        <header> <h1>cheese: <span id="cheese_count">0</span></h1> </header>
+
+        <div class="laside">
+          <h2>history:</h2> 
+          <p><span id="history"></span></p>
+        </div>
+
+        <main> 
+          <button onclick="clicked_cheese()" class="cheese_button">
+            <img src="/static/cheese_button.png"></img>
+          </button> 
+        </main>
+
+        <aside class="raside">
+          <div class="button_holder">
+            <button onclick="by1_5()"><img src="/static/multy_1.5.png"></img><br>cost: <span id="doubler">1</span></button>
+            <button onclick="delete_history()">delete history</button>
+            <br>
+            <button onclick="ascend()">ascend</button>
+          </div>
+
+          <h3>acheivements</h3>
+          <ul class="acheivements">
+            <li id="achiv1"><img src="/static/unacheivement.png"></li>
+            <li id="achiv2"><img src="/static/unacheivement.png"></li>
+            <li id="achiv3"><img src="/static/unacheivement.png"></li>
+            <li id="achiv4"><img src="/static/unacheivement.png"></li>
+            <li id="achiv5"><img src="/static/unacheivement.png" onclick="acheive_acheivement8()"></li>
+            <li id="achiv6"><img src="/static/unacheivement.png"></li>
+            <li id="achiv7"><img src="/static/unacheivement.png"></li>
+            <li id="achiv8"><img src="/static/unacheivement.png"></li>
+            <li id="achiv9"><img src="/static/unacheivement.png"></li>
+          </ul>
+
+          <p><strong>thanks to:</strong><br> 
+            ortail for inspiring me to make this awful so called "clicker game"<br>
+            the course i am kind of a part of, "לומדים פייתון"<br>
+            MS pain<sup>t</sup> for all the pixel art<br>
+            basically this video on youtube, for starting the programing: 
+            <a href="https://www.youtube.com/watch?v=RIYde5oY8IU&ab_channel=%7BRhymBil%7D" target="_blank" onclick="acheive_acheivement7()">counting video</a><br>
+            to all my friends that i could tell about things thing to<br>
+            VS code for the code editing program<br>
+            for the chair i sit on, it's so comfy<br>
+            i ate a wafer once<br>
+            and of course, <strong style="font-size: 30px;">ME</strong>
+          </p>
+        </aside>
+      </div>
+    </body>
+</html>
